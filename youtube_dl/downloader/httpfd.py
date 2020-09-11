@@ -17,9 +17,9 @@ class HttpHB(HttpFD):
                 try:
                     data = info_dict['heartbeat_data'].encode("utf-8")
                     compat_urllib_request.urlopen(url=info_dict['heartbeat_url'], data=data)
-                    print('heart beat!')
+                    self.to_screen('heart beat!')
                 except Exception as ex:
-                    print('heart beat fail: ' + ex.message)
+                    self.to_stderr('heart beat fail: ' + ex.message)
                     pass
 
                 if not result:
