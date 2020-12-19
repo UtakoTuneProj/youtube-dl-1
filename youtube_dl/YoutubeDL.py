@@ -1869,7 +1869,7 @@ class YoutubeDL(object):
             try:
                 def dl(name, info):
                     if 'heartbeat_url' in info:
-                        print("use HTTPHB")
+                        self.to_screen("use HTTPHB")
                         fd = HttpHB(self, self.params)
                     else:
                         fd = get_suitable_downloader(info, self.params)(self, self.params)
